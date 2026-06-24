@@ -6,12 +6,56 @@ html{
 }
 /* Body */
 body {
+    min-width: 580px;
     margin: 0% ; /* This ensures our site displays all the way to the edge of the browser screen */
     letter-spacing: .2vw; /* vw is a relative measurement, 1vw is equal to 1% of the viewport width */
     overflow-x: hidden; /* This prevents the horizontal scroll bar from appearing when the quote is hovered over */
     user-select: none; /* This prevents the text on the webpage from being highlighted by the user */
 }
 
+.page-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  min-width: 320px; 
+  margin: 0 auto;   
+}
+/* ==========================================================================
+   VIDEO BACKGROUND CONTAINER
+   ========================================================================== */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Lo envía detrás de todo el contenido */
+  overflow: hidden;
+}
+
+/* Forzar al video a cubrir toda la pantalla manteniendo su proporción */
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Recorta los bordes sobrantes como un fondo clásico */
+}
+section {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido quede por encima del video */
+  min-height: 100vh; /* Cada sección ocupará el tamaño de una pantalla completa */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* CLAVE: Fondos transparentes o con colores semitransparentes (RGBA) */
+  background: transparent; 
+}
 .line{
     border: 0.2vw solid blue;
     position: fixed;
@@ -156,7 +200,7 @@ footer {
 }
 .footer{
     text-align: center;  
-    padding-left: 30vw; 
+    padding-left: 14%; 
     /*padding-right: 10vw;*/
     font-weight: bold;
     z-index: 20;
@@ -601,6 +645,10 @@ button.submit:hover {
     Video_Text p.center {
         font-size: 3.2vw;
     }
+    video {
+        width: 100%;
+
+    }
 }
 
 @media screen and (min-width: 528px) and (max-width: 660px) {
@@ -613,6 +661,10 @@ button.submit:hover {
     Video_Text p.center {
         font-size: 3.2vw;
     }
+    video {
+        width: 100%;
+
+    }
 }
 
 @media screen and (min-width: 661px) and (max-width: 799px) {
@@ -622,6 +674,10 @@ button.submit:hover {
     form {
         height: 69vw;
     }    
+    video {
+        width: 100%;
+
+    }
 }
 
 @media screen and (min-width: 800px) and (max-width: 924px) {

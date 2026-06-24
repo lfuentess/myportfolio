@@ -3,15 +3,24 @@
     <!--Head-->
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>L.Fuentes - Repository</title>
         <link rel="shortcut icon" type="img/jpg" href="favicon-16x16.png">
         <link rel="stylesheet" type="text/css" href="stylesheet/portfolio.css">
     </head>
 
     <!--Body-->
-    <body class="Background">
-        
+    <body class="Background age-wrapper">
+        <!--Background video-->
+        <div  class="video-background">
+            <video autoplay muted loop id="Typing_Video">
+                <!--This video from pixabay.com author:Riaz-Baloch-->
+                <source src="images/video/video5_tiny.mp4" type="video/mp4">
+                <!--Display message if video fails to run-->
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
         <!--Navbar-->
         <div class="Navbar">
             <a href="#Home">Home</a>
@@ -24,20 +33,9 @@
         <div class="line"></div>
         <!--Breaks inserted to add space between navbar and the first heading-->
         <br>
-        <br>
-
-        <!--Background video-->
-        <div id="Home">
-            <video autoplay muted loop id="Typing_Video">
-                <!--This video from pixabay.com author:Riaz-Baloch-->
-                <source src="images/video/video5_tiny.mp4" type="video/mp4">
-                <!--Display message if video fails to run-->
-                Your browser does not support HTML5 video.
-            </video>
-        </div>
 
         <!--Video text-->
-        <div class="Video_Text">
+        <div id="Home" class="Video_Text section">
             <h1 class="white-text">L.Fuentes's Portfolio</h1>
             <strong>
                 <p class="center">
@@ -54,7 +52,7 @@
         </div>
 
         <!--About section-->
-        <div class="Row " id="About">
+        <div class="Row section" id="About">
             <!--Left column-->
             <div class="Column_2 Column_tall grad">
                 <div class="image-container">
@@ -79,7 +77,7 @@
         </div>
 
         <!-- Slideshow section added -->
-        <div id="Slideshow">
+        <div id="Slideshow" class="section">
             <div id="Slideshow_Background"> 
                 <div id="Slideshow_Container">
                     <!-- Slide 1 of 6 -->
@@ -130,7 +128,7 @@
             </div>
         </div>        
         <!--GitHub section-->
-        <div class="Row" id="GitHub">
+        <div class="Row section" id="GitHub">
             <!--Left column-->
             <div class="Column_1">
                 <h1>GitHub</h1>
@@ -157,13 +155,13 @@
                     <!--This specifies where and how to send the form data; we are leaving it blank-->
                     <form action="https://formspree.io/f/xnjrplay" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
                     <h1>Contact</h1>
-                        <label>Name:</label>
-                            <input type="text" placeholder="Please enter your name here">
+                        <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" placeholder="Please enter your name here">
                         <label for="phone"><b>Phone</b></label>
-                            <input type="text" placeholder="Type your phone number here" name="phone">
-                        <label>Email:</label>
+                            <input type="text" placeholder="Type your phone number here" id="phone" name="phone">
+                        <label for="Email">Email:</label>
                             <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                        <label>Message:</label>
+                        <label for="Message">Message:</label>
                             <input type="text" id="Message" name="Message" placeholder="Please write your message here">
                         <button type="submit" class="btn submit">SUBMIT</button>
                         <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
@@ -175,7 +173,9 @@
 
         <!--Footer section <p class="center footer"></p>-->
         <footer>
-            <span class="footer">&copy L.Fuentes Consulting Inc., <a href="https://www.aolbrampton.ca" target="_blank">Academy of Learning Career College</a></span>
+            <span class="footer">&copy L.Fuentes Consulting Inc.,</span>
+            <span class="footer"><a href="https://www.aolbrampton.ca" target="_blank">Academy of Learning Career College</a></span>
+            <span class="footer">2026</span>
             <div class="line1"></div>
         </footer>
         <script src="JS/portfolio.js"></script>        

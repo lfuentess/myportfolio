@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" />
         <title>L.Fuentes - Repository</title>
+        <link rel="shortcut icon" type="img/jpg" href="favicon-16x16.png">
         <link rel="stylesheet" type="text/css" href="stylesheet/portfolio.css">
     </head>
 
@@ -13,12 +14,14 @@
         
         <!--Navbar-->
         <div class="Navbar">
-            <a class="active" href="#Home">Home</a>
-            <a href="#About">About</a>
+            <a href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a href="#About">About</a>
+            
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
-
+        <div class="line"></div>
         <!--Breaks inserted to add space between navbar and the first heading-->
         <br>
         <br>
@@ -62,7 +65,7 @@
             <!--Right column-->
             <div class="Column_1" >
                 <h1>About</h1>
-                <p>
+                <p class="descript">
                     I'm a software developer who loves programming. Solving problems and creating new things is my hobby, and I enjoy spending time with my family.
                     <br>
                     <br>I am a graduate of <a href="https://www.aolbrampton.ca" target="_blank">Academy of Learning Career College</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. 
@@ -75,15 +78,67 @@
             </div>
         </div>
 
+        <!-- Slideshow section added -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background"> 
+                <div id="Slideshow_Container">
+                    <!-- Slide 1 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos"> 
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!-- Slide 2 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/Python.png" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!-- Slide 3 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/C_Sharp_and_Dot_NET.png" alt="C# logo">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                    </div>
+                    <!-- Slide 4 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/SQL_and_Database(1).jpg" alt="SQL logo"> 
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+                    <!-- Slide 5 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images image2" src="images/myPhoto.jpg" alt="This is me">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!-- Slide 6 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images image2" src="images/io-images-letter.png" alt="Replace with a picture of your choosing"> 
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div> 
+                    </div>
+                    <!-- Previous and next buttons -->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!-- Adds a space between the slideshow images and the dots -->
+
+                <!-- Slideshow dots (these are another way for users to navigate through the slideshow) -->
+                <div style="text-align: center;padding-bottom: 1vw;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                    <span class="dot" onclick="currentSlide(6)"></span> 
+                </div>
+            </div>
+        </div>        
         <!--GitHub section-->
         <div class="Row" id="GitHub">
             <!--Left column-->
             <div class="Column_1">
                 <h1>GitHub</h1>
-                <p>
-                    You can view my coding projects on my GitHub profile here:
+                <p class="center">
                     <br>
-                    <p class="center"><a href="https://github.com/lfuentess/HTML-and-CSS-Projects" target="_blank">L.Fuentes Github</a></p>
+                    You can view my coding projects on my GitHub profile here:
+                    <br><br><br>
+                    <p class="center"><a class="personal" href="https://github.com/lfuentess/HTML-and-CSS-Projects" target="_blank">&nbsp;&nbsp;&nbsp;L.Fuentes Github&nbsp;&nbsp;&nbsp;</a></p>
                 </p>
             </div>
             <!--Right column-->
@@ -94,35 +149,35 @@
 
         <!--Contact section-->
         <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall grad">
-                <div class="image-container">
-                    <img src="images/image2.jpg" alt="Digital Transformation" class="fade-image img-1">
-                    <img src="images/image5.jpg" alt="Contact_Image" class="fade-image img-2">
-                </div>
-            </div>
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
             <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT" class="bottom">
-                </form>
+            <div id="Contact">
+                <!--<div class="Column_1 Column_tall">-->
+                <div class="form-popup" id="myForm">
+                    <!--This specifies where and how to send the form data; we are leaving it blank-->
+                    <form action="https://formspree.io/f/xnjrplay" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+                    <h1>Contact</h1>
+                        <label>Name:</label>
+                            <input type="text" placeholder="Please enter your name here">
+                        <label for="phone"><b>Phone</b></label>
+                            <input type="text" placeholder="Type your phone number here" name="phone">
+                        <label>Email:</label>
+                            <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                        <label>Message:</label>
+                            <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                        <button type="submit" class="btn submit">SUBMIT</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+
+                    </form>
+                </div>
             </div>
         </div>
 
-        <!--Footer section-->
+        <!--Footer section <p class="center footer"></p>-->
         <footer>
-            <p>
-                <p class="center">&copy L.Fuentes Consulting Inc., <a href="https://www.aolbrampton.ca" target="_blank">Academy of Learning Career College</a></p>
-                <br>
-            </p>
+            <span class="footer">&copy L.Fuentes Consulting Inc., <a href="https://www.aolbrampton.ca" target="_blank">Academy of Learning Career College</a></span>
+            <div class="line1"></div>
         </footer>
+        <script src="JS/portfolio.js"></script>        
     </body>
 </html>

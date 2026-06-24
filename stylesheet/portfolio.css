@@ -183,19 +183,10 @@ img:hover {
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(25, 0, 255));
 }
 
-/* The @media rule is used in media queries to apply different styles for different media/types of devices */
-/* On screens 576px and smaller the images will be 100px tall and centered vertically in the column */
-@media screen and (max-width: 576px) {
-    img {
-        height: 10px;
-        margin-top: 150px;
-    }
-}
 
 /* Styling for footer element */
 footer {
-    position: fixed;
-    bottom: 0.1vw;
+
     width: 99vw;
 }
 .footer{
